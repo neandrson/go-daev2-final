@@ -5,9 +5,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/agent/internal/clients/orchestrator/grpc"
-	"github.com/a-romash/grpc-calculator/agent/internal/domain/models"
-	"github.com/a-romash/grpc-calculator/agent/internal/service/agent"
+	"github.com/neandrson/go-daev2-final/agent/internal/clients/orchestrator/grpc"
+	"github.com/neandrson/go-daev2-final/agent/internal/domain/models"
+	"github.com/neandrson/go-daev2-final/agent/internal/service/agent"
 )
 
 type GRPCCApp struct {
