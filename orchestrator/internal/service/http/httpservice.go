@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/clients/sso/grpc"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/domain/models"
 	"github.com/jackc/pgx/v5"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/clients/sso/grpc"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
 )
 
 type HttpService struct {
