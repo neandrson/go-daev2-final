@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/sso/internal/domain/models"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/neandrson/go-daev2-final/sso/internal/domain/models"
 	"github.com/pkg/errors"
 )
 
