@@ -7,11 +7,11 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/clients/sso/grpc"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/domain/models"
-	middleware "github.com/a-romash/grpc-calculator/orchestrator/internal/http-server/middlewares"
-	httpservice "github.com/a-romash/grpc-calculator/orchestrator/internal/service/http"
 	"github.com/gorilla/mux"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/clients/sso/grpc"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
+	middleware "github.com/neandrson/go-daev2-final/orchestrator/internal/http-server/middlewares"
+	httpservice "github.com/neandrson/go-daev2-final/orchestrator/internal/service/http"
 )
 
 type Server struct {
