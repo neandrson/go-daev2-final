@@ -1,4 +1,4 @@
-module github.com/a-romash/grpc-calculator/sso
+module github.com/neandrson/go-daev2-final/sso
 
 go 1.22.1
 
