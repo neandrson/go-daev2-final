@@ -6,7 +6,7 @@ import (
 	"log/slog"
 
 	shuntingYard "github.com/a-romash/go-shunting-yard"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/domain/models"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
 )
 
 type Orchestrator struct {
