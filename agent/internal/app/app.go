@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"time"
 
-	grpcc "github.com/a-romash/grpc-calculator/agent/internal/app/grpc_client"
+	grpcc "github.com/neandrson/go-daev2-final/agent/internal/app/grpc_client"
 )
 
 type App struct {
