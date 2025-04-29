@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/domain/models"
-	expressionparser "github.com/a-romash/grpc-calculator/orchestrator/internal/lib/expressionParser"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
+	expressionparser "github.com/neandrson/go-daev2-final/orchestrator/internal/lib/expressionParser"
 	"github.com/pkg/errors"
 )
 
