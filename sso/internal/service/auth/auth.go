@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/sso/internal/domain/models"
-	"github.com/a-romash/grpc-calculator/sso/internal/lib/jwt"
 	"github.com/jackc/pgx/v5"
+	"github.com/neandrson/go-daev2-final/sso/internal/domain/models"
+	"github.com/neandrson/go-daev2-final/sso/internal/lib/jwt"
 
 	"golang.org/x/crypto/bcrypt"
 )
