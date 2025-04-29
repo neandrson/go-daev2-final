@@ -4,10 +4,10 @@ import (
 	"log/slog"
 	"time"
 
-	grpcapp "github.com/a-romash/grpc-calculator/orchestrator/internal/app/grpc"
-	httpapp "github.com/a-romash/grpc-calculator/orchestrator/internal/app/http"
-	orch "github.com/a-romash/grpc-calculator/orchestrator/internal/service/orchestrator"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/storage/postgres"
+	grpcapp "github.com/neandrson/go-daev2-final/orchestrator/internal/app/grpc"
+	httpapp "github.com/neandrson/go-daev2-final/orchestrator/internal/app/http"
+	orch "github.com/neandrson/go-daev2-final/orchestrator/internal/service/orchestrator"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/storage/postgres"
 )
 
 type App struct {
