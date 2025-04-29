@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"strings"
 
-	model "github.com/a-romash/grpc-calculator/orchestrator/internal/domain/models"
-	expressionparser "github.com/a-romash/grpc-calculator/orchestrator/internal/lib/expressionParser"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/lib/jwt"
+	model "github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
+	expressionparser "github.com/neandrson/go-daev2-final/orchestrator/internal/lib/expressionParser"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/lib/jwt"
 )
 
 type myRequest struct {
