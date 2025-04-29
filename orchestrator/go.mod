@@ -1,4 +1,4 @@
-module github.com/a-romash/grpc-calculator/orchestrator
+module github.com/neandrson/go-daev2-final/orchestrator
 
 go 1.22.1
 
