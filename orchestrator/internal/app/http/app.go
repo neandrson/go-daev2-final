@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/clients/sso/grpc"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/http-server/server"
-	httpservice "github.com/a-romash/grpc-calculator/orchestrator/internal/service/http"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/clients/sso/grpc"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/http-server/server"
+	httpservice "github.com/neandrson/go-daev2-final/orchestrator/internal/service/http"
 )
 
 type HTTPApp struct {
