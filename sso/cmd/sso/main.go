@@ -6,9 +6,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/a-romash/grpc-calculator/sso/internal/app"
-	"github.com/a-romash/grpc-calculator/sso/internal/config"
-	"github.com/a-romash/grpc-calculator/sso/internal/lib/logger/handlers/slogpretty"
+	"github.com/neandrson/go-daev2-final/sso/internal/app"
+	"github.com/neandrson/go-daev2-final/sso/internal/config"
+	"github.com/neandrson/go-daev2-final/sso/internal/lib/logger/handlers/slogpretty"
 )
 
 const (
