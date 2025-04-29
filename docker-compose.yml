@@ -1,63 +1,93 @@
-#version: "3.3"
-  
+version: "3.9"
+
 services:
-  orchestrator:
-    build:
-      context: .
-      dockerfile: scripts/orchestrator/Dockerfile
+  server:
     container_name: orchestrator
-    networks:
-      - intnet
+    build: 
+      context: ./orchestrator
+      dockerfile: ./Dockerfile
+    command: ./server --config ./config/config.yaml
     ports:
-      - "80:8081"
-    expose:
-      - "8081"
-    env_file:
-      - path: .env
-    environment:
-      - TIME_ADDITION_MS=${TIME_ADDITION_MS}
-      - TIME_SUBTRACTION_MS=${TIME_SUBTRACTION_MS}
-      - TIME_DIVISIONS_MS=${TIME_DIVISIONS_MS}
-      - TIME_MULTIPLICATIONS_MS=${TIME_MULTIPLICATIONS_MS}
-  agent1:
-    build:
-      context: .
-      dockerfile: scripts/agent/Dockerfile
-    container_name: agent1
+      - 8080:8080
+      - 44045:44045
+    restart: unless-stopped
+    depends_on:
+      - postgresql
     networks:
-      - intnet
-    links:
-      - orchestrator
-    env_file:
-      - path: .env
-    environment:
-      - COMPUTING_POWER=${COMPUTING_POWER}
-  agent2:
-    build:
-      context: .
-      dockerfile: scripts/agent/Dockerfile
-    container_name: agent2
+      - app_network
+  
+  agent:
+    build: 
+      context: ./agent
+      dockerfile: ./Dockerfile
+    command: ./agent --config ./config/config.yaml
+    restart: unless-stopped
+    depends_on:
+      - server
     networks:
-      - intnet
-    links:
-      - orchestrator
-    env_file:
-      - path: .env
-    environment:
-      - COMPUTING_POWER=${COMPUTING_POWER}
-  agent3:
+      - app_network
+
+  sso:
+    container_name: sso
     build:
-      context: .
-      dockerfile: scripts/agent/Dockerfile
-    container_name: agent3
+      context: ./sso
+      dockerfile: ./Dockerfile
+    command: ./sso --config ./config/config.yaml
+    ports:
+      - 44044:44044
+    restart: unless-stopped
+    depends_on:
+      - postgresql
     networks:
-      - intnet
-    links:
-      - orchestrator
-    env_file:
-      - path: .env
+      - app_network
+
+  postgresql:
+    container_name: postgresql
+    image: postgres
+    ports:
+      - 5432:5432
+    restart: unless-stopped
     environment:
-      - COMPUTING_POWER=${COMPUTING_POWER}
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    networks:
+      - app_network
+      # - postgres_network
+    volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "nudopustimemail@pochta.com"
+      PGADMIN_DEFAULT_PASSWORD: "pgadminpwd"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    networks:
+      - app_network
+
+volumes:
+  pgdata:
+  pgadmin-data:
 
 networks:
-  intnet:
+  app_network:
+    driver: bridge
