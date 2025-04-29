@@ -4,9 +4,9 @@ import (
 	"log/slog"
 	"time"
 
-	grpcapp "github.com/a-romash/grpc-calculator/sso/internal/app/grpc"
-	"github.com/a-romash/grpc-calculator/sso/internal/service/auth"
-	"github.com/a-romash/grpc-calculator/sso/internal/storage/postgres"
+	grpcapp "github.com/neandrson/go-daev2-final/sso/internal/app/grpc"
+	"github.com/neandrson/go-daev2-final/sso/internal/service/auth"
+	"github.com/neandrson/go-daev2-final/sso/internal/storage/postgres"
 )
 
 type App struct {
