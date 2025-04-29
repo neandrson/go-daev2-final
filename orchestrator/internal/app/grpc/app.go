@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"net"
 
-	orchgrpc "github.com/a-romash/grpc-calculator/orchestrator/internal/grpc/orchestrator"
+	orchgrpc "github.com/neandrson/go-daev2-final/orchestrator/internal/grpc/orchestrator"
 	"google.golang.org/grpc"
 )
 
