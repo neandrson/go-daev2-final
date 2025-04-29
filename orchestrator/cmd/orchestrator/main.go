@@ -6,10 +6,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/app"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/config"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/lib/logger/handlers/slogpretty"
-	"github.com/a-romash/grpc-calculator/orchestrator/internal/storage/postgres"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/app"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/config"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/lib/logger/handlers/slogpretty"
+	"github.com/neandrson/go-daev2-final/orchestrator/internal/storage/postgres"
 )
 
 const (
