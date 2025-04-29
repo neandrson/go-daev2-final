@@ -5,7 +5,7 @@ import (
 	"time"
 
 	shuntingYard "github.com/a-romash/go-shunting-yard"
-	"github.com/a-romash/grpc-calculator/agent/internal/domain/models"
+	"github.com/neandrson/go-daev2-final/agent/internal/domain/models"
 )
 
 type Calculator struct {
