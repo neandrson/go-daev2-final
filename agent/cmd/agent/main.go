@@ -7,9 +7,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/a-romash/grpc-calculator/agent/internal/app"
-	"github.com/a-romash/grpc-calculator/agent/internal/config"
-	"github.com/a-romash/grpc-calculator/agent/internal/lib/logger/handlers/slogpretty"
+	"github.com/neandrson/go-daev2-final/agent/internal/app"
+	"github.com/neandrson/go-daev2-final/agent/internal/config"
+	"github.com/neandrson/go-daev2-final/agent/internal/lib/logger/handlers/slogpretty"
 )
 
 const (
