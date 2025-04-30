@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	shuntingYard "github.com/a-romash/go-shunting-yard"
-	"github.com/a-romash/protos/gen/go/orchestrator"
 	grpclog "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
 	grpcretry "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/retry"
+	shuntingYard "github.com/neandrson/go-shunting-yard"
+	"github.com/neandrson/protos/gen/go/orchestrator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
