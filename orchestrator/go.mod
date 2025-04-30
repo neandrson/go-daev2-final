@@ -3,8 +3,8 @@ module github.com/neandrson/go-daev2-final/orchestrator
 go 1.22.1
 
 require (
-	github.com/neandrson/go-shunting-yard v0.0.0-20240416170645-a0e20ad914c0
-	github.com/neandrson/protos v0.0.0-20240427235838-d22b5aa9dbe4
+	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
+	github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070
 	github.com/fatih/color v1.16.0
 	github.com/gorilla/mux v1.8.1
 	github.com/jackc/pgx/v5 v5.5.5
