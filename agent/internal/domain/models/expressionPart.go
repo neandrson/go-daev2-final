@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	shuntingYard "github.com/a-romash/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-shunting-yard"
 )
 
 type ExpressionPart struct {
