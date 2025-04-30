@@ -1,5 +1,5 @@
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
-github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
+github.com/BurntSushi/toml v1.2.1/go.mod h1:Z73J4CyFqQfx0vRR5MTOhyvK3VnBd7eVRv+eooh5HiU=
 github.com/a-romash/go-shunting-yard v0.0.0-20240416170645-a0e20ad914c0 h1:VmE76aFQ4Jnlenf2KEKdzAxOLC6eLHUjwdF9LKLrzeM=
 github.com/a-romash/go-shunting-yard v0.0.0-20240416170645-a0e20ad914c0/go.mod h1:vhRmyyM0Bj8c0+YpCG6UB86+y5K0MP7K6tM4N3648Tc=
 github.com/a-romash/grpc-calculator/agent v0.0.0-20240428005220-c485bbc8b81d h1:0w7l5COlpmhLZBX3Mg9RLYvxIZxx71Lkmkph8aN53J8=
