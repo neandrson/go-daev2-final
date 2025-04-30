@@ -1,8 +1,8 @@
 buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.31.0-20230802163732-1c33ebd9ecfa.1/go.mod h1:xafc+XIsTxTy76GJQ1TKgvJWsSugFBqMaN27WhUblew=
 cloud.google.com/go/compute v1.24.0/go.mod h1:kw1/T+h/+tK2LJK0wiPPx1intgdAM3j/g3hFDlscY40=
 cloud.google.com/go/compute/metadata v0.2.3/go.mod h1:VAV5nSsACxMJvgaAuX6Pk2AawlZn8kiOGuCv6gTkwuA=
-github.com/a-romash/protos v0.0.0-20240423165627-a0bc37f7eaa3/go.mod h1:v3d+eWeJGxWlytU5BA8PBAh7qH6JOaaeFeOYm/TJNQA=
-github.com/a-romash/protos v0.0.0-20240424153756-8f6276e887a9/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
+github.com/neandrson/protos v0.0.0-20240423165627-a0bc37f7eaa3/go.mod h1:v3d+eWeJGxWlytU5BA8PBAh7qH6JOaaeFeOYm/TJNQA=
+github.com/neandrson/protos v0.0.0-20240424153756-8f6276e887a9/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
 github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230512164433-5d1fd1a340c9/go.mod h1:pSwJ0fSY5KhvocuWSx4fz3BA8OrA1bQn+K1Eli3BRwM=
 github.com/bufbuild/protovalidate-go v0.2.1/go.mod h1:e7XXDtlxj5vlEyAgsrxpzayp4cEMKCSSb8ZCkin+MVA=
 github.com/census-instrumentation/opencensus-proto v0.4.1/go.mod h1:4T9NM4+4Vw91VeyqjLS6ao50K5bOcLKN6Q42XnYaRYw=
