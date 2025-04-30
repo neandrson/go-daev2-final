@@ -3,12 +3,12 @@ module github.com/neandrson/go-daev2-final/agent
 go 1.22.1
 
 //require (
-//	github.com/neandrson/go-shunting-yard v0.0.0-20240416170645-a0e20ad914c0
-//	github.com/neandrson/go-daev2-final/agent v0.0.0-20240428005220-c485bbc8b81d
-//	github.com/neandrson/protos v0.0.0-20240427235838-d22b5aa9dbe4
-//	github.com/fatih/color v1.16.0
-//	github.com/ilyakaznacheev/cleanenv v1.5.0
-//	google.golang.org/grpc v1.63.2
+//	github.com/neandrson/go-shunting-yard
+//	github.com/neandrson/go-daev2-final/agent
+//	
+//	github.com/fatih/color
+//	github.com/ilyakaznacheev/cleanenv
+//	google.golang.org/grpc
 //)
 
 //require (
@@ -28,3 +28,8 @@ go 1.22.1
 //	google.golang.org/genproto/googleapis/rpc v0.0.0-20240227224415-6ceb2ff114de // indirect
 //	google.golang.org/protobuf v1.33.0
 //)
+
+require (
+    github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f // indirect
+    github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070
+)
