@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/a-romash/protos/gen/go/sso"
 	"github.com/jackc/pgx/v5"
+	"github.com/neandrson/protos/gen/go/sso"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
