@@ -3,7 +3,7 @@ package expressionparser
 import (
 	"strings"
 
-	shuntingYard "github.com/a-romash/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-shunting-yard"
 )
 
 // Парсим наше выражение и заодно проверяем на валидность
