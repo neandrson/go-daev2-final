@@ -1,7 +1,7 @@
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
 github.com/BurntSushi/toml v1.2.1/go.mod h1:Z73J4CyFqQfx0vRR5MTOhyvK3VnBd7eVRv+eooh5HiU=
 github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f h1:VmE76aFQ4Jnlenf2KEKdzAxOLC6eLHUjwdF9LKLrzeM=
-github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:vhRmyyM0Bj8c0+YpCG6UB86+y5K0MP7K6tM4N3648Tc=
+github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:7R+GPywqud45kyCtIkDlLVrxY7phpH4Yne7OoPIthl0=
 github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070 h1:zgSaid+KJHsp0vYP/zmwuJ/EBsFpviKNffUGL+dnbU8=
 github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
