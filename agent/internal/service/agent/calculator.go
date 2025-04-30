@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	shuntingYard "github.com/a-romash/go-shunting-yard"
 	"github.com/neandrson/go-daev2-final/agent/internal/domain/models"
+	shuntingYard "github.com/neandrson/go-shunting-yard"
 )
 
 type Calculator struct {
