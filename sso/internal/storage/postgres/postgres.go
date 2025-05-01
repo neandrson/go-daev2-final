@@ -95,7 +95,7 @@ func Init(p *pgxpool.Pool) (err error) {
 	const sql string = `
 	CREATE TABLE IF NOT EXISTS users(
 		id SERIAL PRIMARY KEY,
-		email VARCHAR(255) NOT NULL UNIQUE,
+		login VARCHAR(255) NOT NULL UNIQUE,
 		pass_hash BYTEA NOT NULL
 	);
 
@@ -110,18 +110,18 @@ func Init(p *pgxpool.Pool) (err error) {
 	return err
 }
 
-func (db *Postgresql) SaveUser(ctx context.Context, email string, passHash []byte) (int64, error) {
+func (db *Postgresql) SaveUser(ctx context.Context, login string, passHash []byte) (int64, error) {
 	const op = "storage.postgres.SaveUser"
 
 	const sql = `
-	INSERT INTO users (email, pass_hash)
+	INSERT INTO users (login, pass_hash)
   	VALUES ($1, $2)
 	RETURNING id;
 	`
 
 	var id int
 
-	row := db.pool.QueryRow(ctx, sql, email, passHash)
+	row := db.pool.QueryRow(ctx, sql, login, passHash)
 	err := row.Scan(&id)
 	if err != nil {
 		return -1, fmt.Errorf("%s: %w", op, err)
@@ -129,18 +129,18 @@ func (db *Postgresql) SaveUser(ctx context.Context, email string, passHash []byt
 	return int64(id), nil
 }
 
-func (db *Postgresql) User(ctx context.Context, email string) (*models.User, error) {
+func (db *Postgresql) User(ctx context.Context, login string) (*models.User, error) {
 	const op = "storage.postgres.User"
 
 	const sql string = `
 	SELECT * FROM users
-	WHERE email = $1;
+	WHERE login = $1;
 	`
 
 	var user models.User
 
-	row := db.pool.QueryRow(ctx, sql, email)
-	err := row.Scan(&user.ID, &user.Email, &user.Password)
+	row := db.pool.QueryRow(ctx, sql, login)
+	err := row.Scan(&user.ID, &user.Login, &user.Password)
 	if errors.Is(err, pgx.ErrNoRows) {
 		return nil, err
 	} else if err != nil {
