@@ -122,19 +122,19 @@ func (s *HttpService) EvaluateExpression(
 
 func (s *HttpService) Login(
 	ctx context.Context,
-	email string,
+	login string,
 	password string,
 ) (string, error) {
 	const op = "httpservice.Login"
 
 	log := s.log.With(
 		slog.String("op", op),
-		slog.String("email", email),
+		slog.String("login", login),
 	)
 
 	log.Info("start logining")
 
-	token, err := s.client.Login(context.Background(), email, password)
+	token, err := s.client.Login(context.Background(), login, password)
 	if err != nil {
 		log.Error(err.Error())
 		return "", err
@@ -146,19 +146,19 @@ func (s *HttpService) Login(
 
 func (s *HttpService) Register(
 	ctx context.Context,
-	email string,
+	login string,
 	password string,
 ) (int, error) {
 	const op = "httpservice.Register"
 
 	log := s.log.With(
 		slog.String("op", op),
-		slog.String("email", email),
+		slog.String("login", login),
 	)
 
 	log.Info("start registering")
 
-	id, err := s.client.Register(context.Background(), email, password)
+	id, err := s.client.Register(context.Background(), login, password)
 	if err != nil {
 		log.Error(err.Error())
 		return -1, err
