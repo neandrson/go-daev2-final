@@ -3,17 +3,19 @@ module github.com/neandrson/go-daev2-final/orchestrator
 go 1.22.1
 
 require (
-	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
-	github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070
 	github.com/fatih/color v1.16.0
 	github.com/gorilla/mux v1.8.1
 	github.com/jackc/pgx/v5 v5.5.5
+	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
 	github.com/pkg/errors v0.9.1
 	google.golang.org/grpc v1.63.2
 	google.golang.org/protobuf v1.33.0
 )
 
-require github.com/golang-jwt/jwt/v5 v5.2.1
+require (
+	github.com/golang-jwt/jwt/v5 v5.2.1
+	github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db
+)
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
