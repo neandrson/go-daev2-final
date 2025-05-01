@@ -6,9 +6,9 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/a-romash/protos/gen/go/sso"
 	grpclog "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
 	grpcretry "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/retry"
+	"github.com/neandrson/protos/gen/go/sso"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
