@@ -19,7 +19,6 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
-	github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
