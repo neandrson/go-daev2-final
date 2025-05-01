@@ -42,12 +42,12 @@ type HttpService interface {
 	) ([]models.Expression, error)
 	Login(
 		ctx context.Context,
-		email string,
+		login string,
 		password string,
 	) (string, error)
 	Register(
 		ctx context.Context,
-		email string,
+		login string,
 		password string,
 	) (int, error)
 }
