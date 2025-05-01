@@ -19,8 +19,6 @@ github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWE
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
 github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f h1:Ppn928zdRmvZqbWZsYFm+cQN1Fh8gxbKQQs1yooaDT0=
 github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:7R+GPywqud45kyCtIkDlLVrxY7phpH4Yne7OoPIthl0=
-github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db h1:7sO/sZwOo45mUIJAytqhg1iQtD/UNE+wuQ7xPvNOKKg=
-github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db/go.mod h1:Z0Def23/TAKDV1Egi21d3morz165x2gqEcOhOGK1SAc=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
