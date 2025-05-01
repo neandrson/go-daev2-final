@@ -118,7 +118,7 @@ func Init(p *pgxpool.Pool) (err error) {
 
 	CREATE TABLE IF NOT EXISTS users(
 		id SERIAL PRIMARY KEY,
-		email VARCHAR(255) NOT NULL UNIQUE,
+		login VARCHAR(255) NOT NULL UNIQUE,
 		pass_hash BYTEA NOT NULL
 	);
 	`
