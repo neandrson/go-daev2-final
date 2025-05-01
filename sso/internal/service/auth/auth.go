@@ -24,10 +24,10 @@ type Auth struct {
 type UserStorage interface {
 	SaveUser(
 		ctx context.Context,
-		email string,
+		login string,
 		passHash []byte,
 	) (uid int64, err error)
-	User(ctx context.Context, email string) (*models.User, error)
+	User(ctx context.Context, login string) (*models.User, error)
 	App(ctx context.Context, appId int) (*models.App, error)
 }
 
@@ -45,11 +45,11 @@ func New(
 
 // Login checks if user exists in database with given credentials and returns JWT
 //
-// If user exists but password nor email doesnt exist, returns error
+// If user exists but password nor login doesnt exist, returns error
 // If user doesnt exists, return error
 func (a *Auth) Login(
 	ctx context.Context,
-	email string,
+	login string,
 	password string,
 	appID int,
 ) (string, error) {
@@ -61,7 +61,7 @@ func (a *Auth) Login(
 
 	log.Info("start logining")
 
-	user, err := a.storage.User(ctx, email)
+	user, err := a.storage.User(ctx, login)
 	if err != nil {
 		// TODO: handle non-existent user
 		if errors.Is(err, pgx.ErrNoRows) {
