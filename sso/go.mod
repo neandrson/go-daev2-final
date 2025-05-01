@@ -4,6 +4,7 @@ go 1.22.1
 
 require (
 	github.com/jackc/pgx/v5 v5.5.5
+	github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db
 	github.com/pkg/errors v0.9.1
 	google.golang.org/grpc v1.63.2
 )
