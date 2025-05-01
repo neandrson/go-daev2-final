@@ -69,7 +69,7 @@ func (s *Server) EvaluateExpression(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) Login(w http.ResponseWriter, r *http.Request) {
 	var request struct {
-		Email    string `json:"email"`
+		Login    string `json:"login"`
 		Password string `json:"password"`
 	}
 	err := json.NewDecoder(r.Body).Decode(&request)
@@ -78,7 +78,7 @@ func (s *Server) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	token, err := s.httpService.Login(context.Background(), request.Email, request.Password)
+	token, err := s.httpService.Login(context.Background(), request.Login, request.Password)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -88,7 +88,7 @@ func (s *Server) Login(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) Register(w http.ResponseWriter, r *http.Request) {
 	var request struct {
-		Email    string `json:"email"`
+		Login    string `json:"login"`
 		Password string `json:"password"`
 	}
 
@@ -98,7 +98,7 @@ func (s *Server) Register(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	id, err := s.httpService.Register(context.Background(), request.Email, request.Password)
+	id, err := s.httpService.Register(context.Background(), request.Login, request.Password)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
