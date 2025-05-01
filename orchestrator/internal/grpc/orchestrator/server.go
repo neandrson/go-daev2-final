@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log/slog"
 
+	"github.com/a-romash/protos/gen/go/orchestrator"
 	shuntingYard "github.com/neandrson/go-shunting-yard"
-	"github.com/neandrson/protos/gen/go/orchestrator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
