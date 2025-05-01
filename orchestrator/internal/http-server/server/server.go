@@ -65,7 +65,7 @@ func New(log *slog.Logger, storage httpservice.ExpressionStorage, port int, secr
 
 	// Хэндлеры для запросов с сайта
 	serveMux.HandleFunc("/", server.MainPage)
-	serveMux.Handle("/api/v1/expression", middleware.ValidateToken(middleware.ValidateExpressionMiddleware(http.HandlerFunc(server.EvaluateExpression)), server.secret)).Methods("POST")
+	serveMux.Handle("/api/v1/calculate", middleware.ValidateToken(middleware.ValidateExpressionMiddleware(http.HandlerFunc(server.EvaluateExpression)), server.secret)).Methods("POST")
 	serveMux.Handle("/api/v1/expressions/{id}", middleware.ValidateToken(http.HandlerFunc(server.GetExpressionById), server.secret)).Methods("GET")
 	serveMux.Handle("/api/v1/expressions", middleware.ValidateToken(http.HandlerFunc(server.GetExpressionsForUser), server.secret)).Methods("GET")
 	serveMux.HandleFunc("/api/v1/login", server.Login).Methods("POST")
@@ -73,7 +73,7 @@ func New(log *slog.Logger, storage httpservice.ExpressionStorage, port int, secr
 	serveMux.HandleFunc("/internal/task", server.GetAgentStates).Methods("GET")
 
 	// Хэндлеры для API
-	serveMux.HandleFunc("/api/v1/calculate", server.GetImpodenceKeyHandler).Methods("POST")
+	serveMux.HandleFunc("/internal/task", server.GetImpodenceKeyHandler).Methods("POST")
 
 	http.Handle("/", serveMux)
 
