@@ -20,13 +20,13 @@ type serverAPI struct {
 type Auth interface {
 	Login(
 		ctx context.Context,
-		email string,
+		login string,
 		password string,
 		appID int,
 	) (token string, err error)
 	RegisterNewUser(
 		ctx context.Context,
-		email string,
+		login string,
 		password string,
 	) (userID int64, err error)
 }
@@ -40,8 +40,8 @@ func (s *serverAPI) Login(
 	ctx context.Context,
 	in *sso.LoginRequest,
 ) (*sso.LoginResponse, error) {
-	if in.Email == "" {
-		return nil, status.Error(codes.InvalidArgument, "email is required")
+	if in.Login == "" {
+		return nil, status.Error(codes.InvalidArgument, "login is required")
 	}
 	if in.Password == "" {
 		return nil, status.Error(codes.InvalidArgument, "password is required")
@@ -50,7 +50,7 @@ func (s *serverAPI) Login(
 		return nil, status.Error(codes.InvalidArgument, "app_id is required")
 	}
 
-	token, err := s.auth.Login(ctx, in.Email, in.Password, int(in.GetAppId()))
+	token, err := s.auth.Login(ctx, in.Login, in.Password, int(in.GetAppId()))
 	if errors.Is(err, pgx.ErrNoRows) {
 		return nil, status.Error(codes.NotFound, "user not found")
 	}
@@ -65,14 +65,14 @@ func (s *serverAPI) Register(
 	ctx context.Context,
 	in *sso.RegisterRequest,
 ) (*sso.RegisterResponse, error) {
-	if in.Email == "" {
-		return nil, status.Error(codes.InvalidArgument, "email is required")
+	if in.Login == "" {
+		return nil, status.Error(codes.InvalidArgument, "login is required")
 	}
 	if in.Password == "" {
 		return nil, status.Error(codes.InvalidArgument, "password is required")
 	}
 
-	userID, err := s.auth.RegisterNewUser(ctx, in.Email, in.Password)
+	userID, err := s.auth.RegisterNewUser(ctx, in.Login, in.Password)
 	if errors.Is(err, errors.New("user exists")) {
 		return nil, status.Error(codes.AlreadyExists, "user already exists")
 	}
