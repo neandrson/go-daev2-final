@@ -1,11 +1,7 @@
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
 github.com/BurntSushi/toml v1.2.1/go.mod h1:Z73J4CyFqQfx0vRR5MTOhyvK3VnBd7eVRv+eooh5HiU=
-github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f h1:Ppn928zdRmvZqbWZsYFm+cQN1Fh8gxbKQQs1yooaDT0=
-github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:7R+GPywqud45kyCtIkDlLVrxY7phpH4Yne7OoPIthl0=
-github.com/neandrson/grpc-calculator/agent v0.0.0-20240428005220-c485bbc8b81d h1:0w7l5COlpmhLZBX3Mg9RLYvxIZxx71Lkmkph8aN53J8=
-github.com/neandrson/grpc-calculator/agent v0.0.0-20240428005220-c485bbc8b81d/go.mod h1:tHrScSDwv4T27D8oILXi6Qz81anZ4JkwUpTNOo1YozU=
-github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070 h1:augRH7Fks8BEdB2SSwNZKoC6i8E+F7yBhvK7G2+b4F8=
-github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
+github.com/a-romash/protos v0.0.0-20240427235838-d22b5aa9dbe4 h1:Ck/Pb4T4B9WOeyxRIfduyeSbM/ZsTV/ug5QR2JCMfF8=
+github.com/a-romash/protos v0.0.0-20240427235838-d22b5aa9dbe4/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.16.0 h1:zmkK9Ngbjj+K0yRhTVONQh1p/HknKYSlNT+vZCzyokM=
@@ -23,6 +19,8 @@ github.com/mattn/go-colorable v0.1.13/go.mod h1:7S9/ev0klgBDR4GtXTXX8a3vIGJpMovk
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
 github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
+github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f h1:Ppn928zdRmvZqbWZsYFm+cQN1Fh8gxbKQQs1yooaDT0=
+github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:7R+GPywqud45kyCtIkDlLVrxY7phpH4Yne7OoPIthl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
