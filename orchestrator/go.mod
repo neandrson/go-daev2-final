@@ -14,7 +14,6 @@ require (
 
 require (
 	github.com/golang-jwt/jwt/v5 v5.2.1
-	github.com/neandrson/protos v0.0.0-20250501161055-25d850a3d3c2
 )
 
 require (
