@@ -3,10 +3,9 @@ module github.com/neandrson/go-daev2-final/agent
 go 1.22.1
 
 require (
-	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f // indirect
-	github.com/neandrson/protos v0.0.0-20250430104818-3b79927b7070
 	github.com/fatih/color v1.16.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
+	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
 	google.golang.org/grpc v1.63.2
 )
 
@@ -28,3 +27,4 @@ require (
 	google.golang.org/protobuf v1.33.0
 )
 
+require github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db
