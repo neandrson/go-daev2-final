@@ -1,5 +1,7 @@
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
 github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
+github.com/a-romash/protos v0.0.0-20240427235838-d22b5aa9dbe4 h1:Ck/Pb4T4B9WOeyxRIfduyeSbM/ZsTV/ug5QR2JCMfF8=
+github.com/a-romash/protos v0.0.0-20240427235838-d22b5aa9dbe4/go.mod h1:cy0Ngh3WjIN82AjnKRcf5/ZaxTUgslnlb4cQy+3aw0I=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/color v1.16.0 h1:zmkK9Ngbjj+K0yRhTVONQh1p/HknKYSlNT+vZCzyokM=
