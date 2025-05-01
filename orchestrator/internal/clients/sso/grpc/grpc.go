@@ -81,7 +81,7 @@ func InterceptorLogger(l *slog.Logger) grpclog.Logger {
 
 func (c *Client) Register(
 	ctx context.Context,
-	email string,
+	login string,
 	password string,
 ) (int, error) {
 	const op = "grpc.Register"
@@ -93,7 +93,7 @@ func (c *Client) Register(
 	log.Info("start registering")
 
 	resp, err := c.api.Register(ctx, &sso.RegisterRequest{
-		Email:    email,
+		Login:    login,
 		Password: password,
 	})
 	if err != nil {
@@ -107,13 +107,13 @@ func (c *Client) Register(
 
 func (c *Client) Login(
 	ctx context.Context,
-	email string,
+	login string,
 	password string,
 ) (string, error) {
 	const op = "grpc.Login"
 
 	resp, err := c.api.Login(ctx, &sso.LoginRequest{
-		Email:    email,
+		Login:    login,
 		Password: password,
 		AppId:    int32(c.app_id),
 	})
