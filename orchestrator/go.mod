@@ -13,8 +13,8 @@ require (
 )
 
 require (
+	github.com/a-romash/protos v0.0.0-20240427235838-d22b5aa9dbe4
 	github.com/golang-jwt/jwt/v5 v5.2.1
-	github.com/neandrson/protos v0.0.0-20250430183302-aecf41ddc2db
 )
 
 require (
