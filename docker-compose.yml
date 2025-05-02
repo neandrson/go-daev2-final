@@ -68,7 +68,7 @@ services:
     container_name: pgadmin
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "nudopustimemail@pochta.com"
+      PGADMIN_DEFAULT_EMAIL: "pgadmin"
       PGADMIN_DEFAULT_PASSWORD: "pgadminpwd"
       PGADMIN_CONFIG_SERVER_MODE: "False"
     volumes:
