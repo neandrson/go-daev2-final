@@ -1,13 +1,15 @@
 module github.com/neandrson/go-daev2-final/agent
 
-go 1.22.1
+go 1.23
+
+toolchain go1.23.1
 
 require (
 	github.com/fatih/color v1.16.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
 	github.com/neandrson/protos v0.0.0-20250501181816-40a71cf96f32
-	google.golang.org/grpc v1.63.2
+	google.golang.org/grpc v1.72.0
 )
 
 require (
@@ -21,9 +23,9 @@ require (
 require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	golang.org/x/net v0.21.0 // indirect
-	golang.org/x/sys v0.19.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240227224415-6ceb2ff114de // indirect
-	google.golang.org/protobuf v1.33.0
+	golang.org/x/net v0.35.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a // indirect
+	google.golang.org/protobuf v1.36.5
 )
