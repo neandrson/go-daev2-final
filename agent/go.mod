@@ -8,6 +8,7 @@ require (
 	github.com/fatih/color v1.16.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
+	github.com/neandrson/protos v0.0.0-20250501181816-40a71cf96f32
 	google.golang.org/grpc v1.72.0
 )
 
