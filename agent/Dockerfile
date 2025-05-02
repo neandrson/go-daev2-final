@@ -14,7 +14,7 @@ RUN go mod download
 # Build
 RUN GOOS=linux go build -o agent ./cmd/agent/main.go
 
-FROM alpine:3.21
+FROM alpine:3.18
 
 WORKDIR /
 
