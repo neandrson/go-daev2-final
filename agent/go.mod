@@ -1,14 +1,12 @@
 module github.com/neandrson/go-daev2-final/agent
 
-go 1.23
-
-toolchain go1.23.1
+go 1.23.1
 
 require (
 	github.com/fatih/color v1.16.0
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
-	github.com/neandrson/protos v0.0.0-20250501181816-40a71cf96f32
+	github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888
 	google.golang.org/grpc v1.63.2
 )
 
