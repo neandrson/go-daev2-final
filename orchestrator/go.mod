@@ -8,7 +8,7 @@ require (
 	github.com/jackc/pgx/v5 v5.5.5
 	github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f
 	github.com/pkg/errors v0.9.1
-	google.golang.org/grpc v1.72.0
+	google.golang.org/grpc v1.63.2
 	google.golang.org/protobuf v1.36.5
 )
 
