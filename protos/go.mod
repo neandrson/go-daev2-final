@@ -1,4 +1,4 @@
-module github.com/neandrson/protos
+module github.com/neandrson/go-daev2-final/protos
 
 go 1.23.0
 
