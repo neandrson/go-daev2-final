@@ -1,6 +1,6 @@
 module github.com/neandrson/go-daev2-final/orchestrator
 
-go 1.22.1
+go 1.23.1
 
 require (
 	github.com/fatih/color v1.16.0
