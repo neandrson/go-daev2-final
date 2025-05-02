@@ -14,7 +14,7 @@ RUN go mod download
 # Build
 RUN GOOS=linux go build -o sso ./cmd/sso/main.go
 
-FROM alpine:3.21
+FROM alpine:3.18
 
 WORKDIR /
 
