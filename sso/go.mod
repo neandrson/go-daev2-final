@@ -1,6 +1,6 @@
 module github.com/neandrson/go-daev2-final/sso
 
-go 1.23.1
+go 1.22.1
 
 require (
 	github.com/jackc/pgx/v5 v5.5.5
