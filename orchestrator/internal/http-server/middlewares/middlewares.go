@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"net/http"
 	"strings"
 
@@ -50,9 +49,9 @@ func ValidateExpressionMiddleware(next http.Handler) http.Handler {
 func ValidateToken(next http.Handler, secret string) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		bearer := r.Header.Get("Authorization")
-		fmt.Println(bearer)
+
 		token := strings.Split(bearer, " ")
-		fmt.Println(token)
+
 		if len(token) != 2 {
 			http.Error(w, "token is invalid! "+strings.Join(token, " "), http.StatusUnauthorized)
 			return
