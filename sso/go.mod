@@ -4,7 +4,6 @@ go 1.22.1
 
 require (
 	github.com/jackc/pgx/v5 v5.5.5
-	github.com/neandrson/protos v0.0.0-20250501181816-40a71cf96f32
 	github.com/pkg/errors v0.9.1
 	google.golang.org/grpc v1.63.2
 )
@@ -15,7 +14,7 @@ require (
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
-	golang.org/x/sync v0.6.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
 )
 
 require (
@@ -31,10 +30,10 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/joho/godotenv v1.5.1 // indirect
-	golang.org/x/crypto v0.22.0
-	golang.org/x/net v0.21.0 // indirect
-	golang.org/x/sys v0.19.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240227224415-6ceb2ff114de // indirect
-	google.golang.org/protobuf v1.33.0 // indirect
+	golang.org/x/crypto v0.33.0
+	golang.org/x/net v0.35.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a // indirect
+	google.golang.org/protobuf v1.36.5 // indirect
 )
