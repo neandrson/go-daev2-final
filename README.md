@@ -2,7 +2,7 @@
 
 ### Проект
 
-Отправная точка: http://localhost:8080/ (если запускаете локально)
+Отправная точка: http://localhost:8080/
 
 ## Техническое задание
 <details>
@@ -22,7 +22,7 @@ Back-end часть
 
 - Добавление вычисления арифметического выражения.
 ```go
-curl --location 'localhost/api/v1/calculate' \
+curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
   "expression": <строка с выражение>
@@ -30,19 +30,19 @@ curl --location 'localhost/api/v1/calculate' \
 ```
 - Получение списка выражений со статусами.
 ```go
-curl --location 'localhost/api/v1/expressions'
+curl --location 'localhost:8080/api/v1/expressions'
 ```
 - Получение выражения по его идентификатору
 ```go
-curl --location 'localhost/api/v1/expressions/:id'
+curl --location 'localhost:8080/api/v1/expressions/:id'
 ```
 - Получение задачи для выполнения.
 ```go
-curl --location 'localhost/internal/task'
+curl --location 'localhost:8080/internal/task'
 ```
 - Приём результата обработки данных.
 ```go
-curl --location 'localhost/internal/task' \
+curl --location 'localhost:8080/internal/task' \
 --header 'Content-Type: application/json' \
 --data '{
   "id": 1,
@@ -110,7 +110,7 @@ go run ./cmd/calc_service/...
 </details>
 
 ## Запуск проекта: 
-- Установите [docker engine](https://docs.docker.com/engine/install/) и [docker compose](https://docs.docker.com/compose/install/) (обязательно версию 2.24.5 и новее, иначе на Windows не будет билдить), если не установлено
+- Установите [docker engine](https://docs.docker.com/engine/install/) и [docker compose](https://docs.docker.com/compose/install/) (обязательно версию 2.24.5 и новее, иначе на Windows не будет билдить)
 - Склонируйте репозиторий
 ```sh
 git clone https://github.com/neandrson/go-daev2-final.git
@@ -131,16 +131,30 @@ docker compose build && docker compose up --scale agent=X`
 Пожалуйста, дождитесь сообщения о том, что сервер начал работу.
 На моей машине этот процесс занимает заметное время.
 
-Для того, чтобы остановить запущенные контейнеры  в фоновом режиме:
+Для того, чтобы остановить запущенные контейнеры в фоновом режиме:
 ```sh
 docker compose down
 ```
 или `CTRC-C`, если контейнеры запущены не в фоне.
 
 # Примеры:
+
+се примеры рассчитаны на то, что приложение собиралось через docker compose.
+В ином случае указываете порт, который прослушивает сервер - 8080.
+
 Все примеры http запросов находятся в папке [/docs/examples](./docs/examples)
 
 - [/docs/examples/registerUser.http](./docs/examples/registerUser.http) -> Пример запроса для регистрации пользователя
+```go
+POST http://localhost:8080/register HTTP/1.1
+
+content-type: application/json
+
+{
+    "login": "example",
+    "password": "really_strong_password"
+}
+```
 
 - [/docs/examples/loginUser.http](./docs/examples/loginUser.http) -> Пример запроса для входа пользователя
 
