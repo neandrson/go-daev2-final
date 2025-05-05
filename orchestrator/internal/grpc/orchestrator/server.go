@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	shuntingYard "github.com/neandrson/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 	"github.com/neandrson/protos/gen/go/orchestrator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
