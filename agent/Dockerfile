@@ -12,7 +12,7 @@ COPY go.* ./
 RUN go mod download
 
 # Build
-RUN GOOS=linux go build -o agent ./cmd/agent/main.go
+RUN GOOS=linux go build -o agent ./cmd/main.go
 
 FROM alpine:3.18
 
