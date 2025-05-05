@@ -144,29 +144,86 @@ docker compose down
 
 Все примеры http запросов находятся в папке [/docs/examples](./docs/examples)
 
-- [/docs/examples/registerUser.http](./docs/examples/registerUser.http) -> Пример запроса для регистрации пользователя
+- Пример запроса для регистрации пользователя:
 ```go
-POST http://localhost:8080/register HTTP/1.1
-
-content-type: application/json
-
-{
-    "login": "example",
-    "password": "really_strong_password"
-}
+curl --location 'http://localhost:8080/api/v1/register' \
+--header 'Content-Type: application/json' \
+--data '{
+    "login": "guest",
+    "password": "guest"
+}'
 ```
+Ответ:  Satus: 200
+```go
+Your uid: 1
+```
+- Пример запроса для входа пользователя:
+```go
+curl --location 'http://localhost:8080/api/v1/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "login": "guest",
+    "password": "guest"
+}'
+```
+Ответ:  Status: 200
+```go
+Your authorization token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo
+```
+- Пример запроса на решение примера:
+```go
+curl --location 'http://localhost:8080/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo' \
+--data '{
+    "expression": "2+2"
+}'
+```
+Ответ:  Status: 200
+```go
+Result is: 4
+```
+- Пример запроса на получение состояния всех демонов:
+```go
+curl --location 'http://localhost:8080/internal/task'
+```
+Ответ:  Status: 200
+```go
+id: 1
+last_heartbeat: 2025-05-05 17:27:06.595913 +0000 UTC
+status: solving-2_p_2
+```
+- Пример запроса на получение всех решенных (и не только) примеров для определенного пользователя:
+```go
+curl --location 'http://localhost:8080/api/v1/expressions' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo'
+```
+Ответ:  Status: 200
+```go
+expression: 2+2
+status: solved
+result: 4.000000
+created_at: 2025-05-05 17:43:05.256561 +0000 UTC
+solved_at: 2025-05-05 17:43:08.556705 +0000 UTC
+id: 2_p_2
+```
+- [/docs/examples/getExpressionById.http](./docs/examples/getExpressionById.http) -> Пример запроса на получение выражения по его id:
+```go
 
-- [/docs/examples/loginUser.http](./docs/examples/loginUser.http) -> Пример запроса для входа пользователя
+```
+- [/docs/examples/getImpodenceKey.http](./docs/examples/getImpodenceKey.http) -> Пример запроса на получение ключа имподентности (id выражения):
+```go
+curl --location 'http://localhost:8080/internal/task' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo' \
+--data '{
+    "expression": "2+2"
+}'
+```
+Ответ:  Status: 200
+```go
 
-- [/docs/examples/evaluateExpression.http](./docs/examples/evaluateExpression.http) -> Пример запроса на решение примера
-
-- [/docs/examples/getAgentState.http](./docs/examples/getAgentState.http) -> Пример запроса на получение состояния всех демонов
-
-- [/docs/examples/getAllExpressions.http](./docs/examples/getAllExpressions.http) -> Пример запроса на получение всех решенных (и не только) примеров для определенного пользователя
-
-- [/docs/examples/getExpressionById.http](./docs/examples/getExpressionById.http) -> Пример запроса на получение выражения по его id
-
-- [/docs/examples/getImpodenceKey.http](./docs/examples/getImpodenceKey.http) -> Пример запроса на получение ключа имподентности (id выражения)
+```
 ## Вы можете получить данную ошибку: 
 
 `Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:5673 -> 0.0.0.0:0: listen tcp 0.0.0.0:5673: bind: address already in use`
