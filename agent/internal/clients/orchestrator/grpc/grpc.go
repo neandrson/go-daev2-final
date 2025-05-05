@@ -9,7 +9,7 @@ import (
 
 	grpclog "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
 	grpcretry "github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/retry"
-	shuntingYard "github.com/neandrson/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 	"github.com/neandrson/protos/gen/go/orchestrator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
