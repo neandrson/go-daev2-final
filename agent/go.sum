@@ -17,8 +17,6 @@ github.com/mattn/go-colorable v0.1.13/go.mod h1:7S9/ev0klgBDR4GtXTXX8a3vIGJpMovk
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
 github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
-github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f h1:Ppn928zdRmvZqbWZsYFm+cQN1Fh8gxbKQQs1yooaDT0=
-github.com/neandrson/go-shunting-yard v0.0.0-20250430062031-8105b246809f/go.mod h1:7R+GPywqud45kyCtIkDlLVrxY7phpH4Yne7OoPIthl0=
 github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888 h1:1GGvGJ5nmhZhI0gbiCDJ4aGT/Bsh73OZgnZvJmbowDM=
 github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888/go.mod h1:UbrqWpUCnmyedp0LGMU2Wevz/uCOi5J/rC7dYZcPb1Q=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
