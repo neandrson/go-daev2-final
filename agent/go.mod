@@ -9,6 +9,8 @@ require (
 	google.golang.org/grpc v1.63.2
 )
 
+require github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250505161036-ce59ff4a3710
+
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
