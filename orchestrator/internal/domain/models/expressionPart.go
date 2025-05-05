@@ -1,6 +1,6 @@
 package models
 
-import shuntingYard "github.com/neandrson/go-shunting-yard"
+import shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 
 type ExpressionPart struct {
 	FirstOperand  *shuntingYard.RPNToken      `json:"firstOperand"`
