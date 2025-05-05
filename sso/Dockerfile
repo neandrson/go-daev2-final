@@ -12,7 +12,7 @@ COPY go.* ./
 RUN go mod download
 
 # Build
-RUN GOOS=linux go build -o sso ./cmd/sso/main.go
+RUN GOOS=linux go build -o sso ./cmd/main.go
 
 FROM alpine:3.18
 
