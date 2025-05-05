@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	shuntingYard "github.com/neandrson/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 )
 
 type Expression struct {
