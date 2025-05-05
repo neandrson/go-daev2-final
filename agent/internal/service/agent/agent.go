@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/neandrson/go-daev2-final/agent/internal/domain/models"
-	shuntingYard "github.com/neandrson/go-shunting-yard"
+	shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 )
 
 type Agent struct {
