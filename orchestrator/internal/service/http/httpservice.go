@@ -27,11 +27,7 @@ type ExpressionStorage interface {
 	GetResultOfExpression(ctx context.Context, id string) (float32, error)
 }
 
-func New(
-	log *slog.Logger,
-	storage ExpressionStorage,
-	client *grpc.Client,
-) *HttpService {
+func New(log *slog.Logger, storage ExpressionStorage, client *grpc.Client) *HttpService {
 	return &HttpService{
 		log:     log,
 		storage: storage,
@@ -39,11 +35,7 @@ func New(
 	}
 }
 
-func (s *HttpService) GetExpressionById(
-	ctx context.Context,
-	id string,
-	uid int,
-) (*models.Expression, error) {
+func (s *HttpService) GetExpressionById(ctx context.Context, id string, uid int) (*models.Expression, error) {
 	const op = "httpservice.GetExpressionById"
 
 	log := s.log.With(
@@ -68,11 +60,7 @@ func (s *HttpService) GetExpressionById(
 	return expression, err
 }
 
-func (s *HttpService) EvaluateExpression(
-	ctx context.Context,
-	expression *models.Expression,
-	uid int,
-) (float32, error) {
+func (s *HttpService) EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (float32, error) {
 	const op = "httpservice.EvaluateExpression"
 
 	log := s.log.With(
@@ -100,11 +88,7 @@ func (s *HttpService) EvaluateExpression(
 	return result, nil
 }
 
-func (s *HttpService) Login(
-	ctx context.Context,
-	login string,
-	password string,
-) (string, error) {
+func (s *HttpService) Login(ctx context.Context, login string, password string) (string, error) {
 	const op = "httpservice.Login"
 
 	log := s.log.With(
@@ -124,11 +108,7 @@ func (s *HttpService) Login(
 	return token, nil
 }
 
-func (s *HttpService) Register(
-	ctx context.Context,
-	login string,
-	password string,
-) (int, error) {
+func (s *HttpService) Register(ctx context.Context, login string, password string) (int, error) {
 	const op = "httpservice.Register"
 
 	log := s.log.With(
@@ -148,10 +128,7 @@ func (s *HttpService) Register(
 	return id, nil
 }
 
-func (s *HttpService) GetExpressionsForUser(
-	ctx context.Context,
-	uid int,
-) ([]models.Expression, error) {
+func (s *HttpService) GetExpressionsForUser(ctx context.Context, uid int) ([]models.Expression, error) {
 	const op = "httpservice.GetExpressionsForUser"
 
 	log := s.log.With(
@@ -171,9 +148,7 @@ func (s *HttpService) GetExpressionsForUser(
 	return expressions, nil
 }
 
-func (s *HttpService) GetAgentStates(
-	ctx context.Context,
-) ([]models.Agent, error) {
+func (s *HttpService) GetAgentStates(ctx context.Context) ([]models.Agent, error) {
 	const op = "httpservice.GetAgentStates"
 
 	log := s.log.With(
