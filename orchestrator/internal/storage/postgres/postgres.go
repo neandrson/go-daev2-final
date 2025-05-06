@@ -99,8 +99,6 @@ func Init(p *pgxpool.Pool) (err error) {
 		expression VARCHAR(255) NOT NULL,
 		uid SERIAL NOT NULL REFERENCES users(id),
 		result FLOAT,
-		created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-		solved_at TIMESTAMP,
 		status VARCHAR(255) NOT NULL DEFAULT 'new'
 	);
 
@@ -121,7 +119,8 @@ func Init(p *pgxpool.Pool) (err error) {
 		login VARCHAR(255) NOT NULL UNIQUE,
 		pass_hash BYTEA NOT NULL
 	);
-	`
+	` //created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//solved_at TIMESTAMP,
 
 	_, err = p.Exec(context.Background(), sql)
 	return err
