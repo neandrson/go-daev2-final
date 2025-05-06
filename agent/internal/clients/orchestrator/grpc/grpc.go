@@ -134,10 +134,7 @@ func fromPrototokensToRPNTokens(prototokens []*orchestrator.RPNToken) ([]*shunti
 	return tokens, nil
 }
 
-func (c *Client) GetExpressionToEvaluate(
-	ctx context.Context,
-	id_agent int,
-) (string, []*shuntingYard.RPNToken, error) {
+func (c *Client) GetExpressionToEvaluate(ctx context.Context, id_agent int) (string, []*shuntingYard.RPNToken, error) {
 	const op = "grpc.GetExpressionToEvaluate"
 
 	resp, err := c.api.GetExpressionToEvaluate(ctx, &orchestrator.IdAgent{
