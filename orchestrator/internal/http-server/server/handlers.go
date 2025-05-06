@@ -36,7 +36,9 @@ func (s *Server) GetExpressionById(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(
 		[]byte(
-			fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\ncreated_at: %v\nsolved_at: %v\n\n", expression.InfinixExpression, expression.Status, expression.Result, expression.CreatedAt, expression.SolvedAt),
+			fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\n\n", expression.InfinixExpression, expression.Status, expression.Result),
+			//created_at: %v\nsolved_at: %v\n
+			// expression.CreatedAt, expression.SolvedAt),
 		),
 	)
 
@@ -136,8 +138,10 @@ func (s *Server) GetExpressionsForUser(w http.ResponseWriter, r *http.Request) {
 	for _, e := range expressions {
 		w.Write(
 			[]byte(
-				fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\ncreated_at: %v\nsolved_at: %v\nid: %s\n\n", e.InfinixExpression, e.Status, e.Result, e.CreatedAt, e.SolvedAt, e.IdExpression),
+				fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\nid: %s\n\n", e.InfinixExpression, e.Status, e.Result),
 			),
+			//created_at: %v\nsolved_at: %v\n
+			// e.CreatedAt, e.SolvedAt, e.IdExpression),
 		)
 	}
 }
