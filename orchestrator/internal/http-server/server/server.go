@@ -23,33 +23,12 @@ type Server struct {
 }
 
 type HttpService interface {
-	GetExpressionById(
-		ctx context.Context,
-		id string,
-		uid int,
-	) (*models.Expression, error)
-	EvaluateExpression(
-		ctx context.Context,
-		expression *models.Expression,
-		uid int,
-	) (float32, error)
-	GetAgentStates(
-		ctx context.Context,
-	) ([]models.Agent, error)
-	GetExpressionsForUser(
-		ctx context.Context,
-		uid int,
-	) ([]models.Expression, error)
-	Login(
-		ctx context.Context,
-		login string,
-		password string,
-	) (string, error)
-	Register(
-		ctx context.Context,
-		login string,
-		password string,
-	) (int, error)
+	GetExpressionById(ctx context.Context, id string, uid int) (*models.Expression, error)
+	EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (float32, error)
+	GetAgentStates(ctx context.Context) ([]models.Agent, error)
+	GetExpressionsForUser(ctx context.Context, uid int) ([]models.Expression, error)
+	Login(ctx context.Context, login string, password string) (string, error)
+	Register(ctx context.Context, login string, password string) (int, error)
 }
 
 func New(log *slog.Logger, storage httpservice.ExpressionStorage, port int, secret string, client *grpc.Client) *Server {
