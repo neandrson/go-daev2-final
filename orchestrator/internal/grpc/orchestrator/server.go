@@ -19,28 +19,11 @@ type serverAPI struct {
 }
 
 type Orchestrator interface {
-	Heartbeat(
-		ctx context.Context,
-		is_alive bool,
-		id_agent int,
-	) error
-	GetExpressionToEvaluate(
-		ctx context.Context,
-		id_agent int,
-	) (string, []*shuntingYard.RPNToken, error)
-	SaveResultOfExpression(
-		ctx context.Context,
-		id_expression string,
-		result float32,
-		idAgent int,
-	) error
-	RegisterNewAgent(
-		ctx context.Context,
-	) (int, error)
-	RemoveAgent(
-		ctx context.Context,
-		idAgent int,
-	) error
+	Heartbeat(ctx context.Context, is_alive bool, id_agent int) error
+	GetExpressionToEvaluate(ctx context.Context, id_agent int) (string, []*shuntingYard.RPNToken, error)
+	SaveResultOfExpression(ctx context.Context, id_expression string, result float32, idAgent int) error
+	RegisterNewAgent(ctx context.Context) (int, error)
+	RemoveAgent(ctx context.Context, idAgent int) error
 }
 
 func Register(gRPCServer *grpc.Server, orch Orchestrator) {
@@ -48,10 +31,7 @@ func Register(gRPCServer *grpc.Server, orch Orchestrator) {
 }
 
 // Implementations of gRPC handlers
-func (s *serverAPI) Heartbeat(
-	ctx context.Context,
-	in *orchestrator.IsAlive,
-) (*emptypb.Empty, error) {
+func (s *serverAPI) Heartbeat(ctx context.Context, in *orchestrator.IsAlive) (*emptypb.Empty, error) {
 	if in.IdAgent == 0 {
 		return nil, status.Error(codes.InvalidArgument, "id_agent is required")
 	}
@@ -85,10 +65,7 @@ func tokensToPrototokens(tokens []*shuntingYard.RPNToken) []*orchestrator.RPNTok
 	return prototokens
 }
 
-func (s *serverAPI) GetExpressionToEvaluate(
-	ctx context.Context,
-	in *orchestrator.IdAgent,
-) (*orchestrator.Expression, error) {
+func (s *serverAPI) GetExpressionToEvaluate(ctx context.Context, in *orchestrator.IdAgent) (*orchestrator.Expression, error) {
 	if in.IdAgent == 0 {
 		return nil, status.Error(codes.InvalidArgument, "id_agent is required")
 	}
@@ -105,10 +82,7 @@ func (s *serverAPI) GetExpressionToEvaluate(
 	}, nil
 }
 
-func (s *serverAPI) GiveResultOfExpression(
-	ctx context.Context,
-	in *orchestrator.ResultOfExpression,
-) (*emptypb.Empty, error) {
+func (s *serverAPI) GiveResultOfExpression(ctx context.Context, in *orchestrator.ResultOfExpression) (*emptypb.Empty, error) {
 	if in.GetIdExpression() == "" {
 		return nil, status.Error(codes.InvalidArgument, "id_expression is required")
 	}
@@ -121,10 +95,7 @@ func (s *serverAPI) GiveResultOfExpression(
 	return &emptypb.Empty{}, nil
 }
 
-func (s *serverAPI) RegisterNewAgent(
-	ctx context.Context,
-	in *emptypb.Empty,
-) (*orchestrator.IdAgent, error) {
+func (s *serverAPI) RegisterNewAgent(ctx context.Context, in *emptypb.Empty) (*orchestrator.IdAgent, error) {
 	fmt.Println("it works")
 	id, err := s.orch.RegisterNewAgent(ctx)
 
@@ -133,10 +104,7 @@ func (s *serverAPI) RegisterNewAgent(
 	}, err
 }
 
-func (s *serverAPI) RemoveAgent(
-	ctx context.Context,
-	in *orchestrator.IdAgent,
-) (*emptypb.Empty, error) {
+func (s *serverAPI) RemoveAgent(ctx context.Context, in *orchestrator.IdAgent) (*emptypb.Empty, error) {
 	err := s.orch.RemoveAgent(ctx, int(in.IdAgent))
 	if err != nil {
 		slog.Error(err.Error())
