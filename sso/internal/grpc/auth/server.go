@@ -18,17 +18,8 @@ type serverAPI struct {
 
 // Interface for service layer
 type Auth interface {
-	Login(
-		ctx context.Context,
-		login string,
-		password string,
-		appID int,
-	) (token string, err error)
-	RegisterNewUser(
-		ctx context.Context,
-		login string,
-		password string,
-	) (userID int64, err error)
+	Login(ctx context.Context, login string, password string, appID int) (token string, err error)
+	RegisterNewUser(ctx context.Context, login string, password string) (userID int64, err error)
 }
 
 func Register(gRPCServer *grpc.Server, auth Auth) {
@@ -36,10 +27,7 @@ func Register(gRPCServer *grpc.Server, auth Auth) {
 }
 
 // Implementations of gRPC handlers
-func (s *serverAPI) Login(
-	ctx context.Context,
-	in *sso.LoginRequest,
-) (*sso.LoginResponse, error) {
+func (s *serverAPI) Login(ctx context.Context, in *sso.LoginRequest) (*sso.LoginResponse, error) {
 	if in.Login == "" {
 		return nil, status.Error(codes.InvalidArgument, "login is required")
 	}
@@ -61,10 +49,7 @@ func (s *serverAPI) Login(
 	return &sso.LoginResponse{Token: token}, nil
 }
 
-func (s *serverAPI) Register(
-	ctx context.Context,
-	in *sso.RegisterRequest,
-) (*sso.RegisterResponse, error) {
+func (s *serverAPI) Register(ctx context.Context, in *sso.RegisterRequest) (*sso.RegisterResponse, error) {
 	if in.Login == "" {
 		return nil, status.Error(codes.InvalidArgument, "login is required")
 	}
