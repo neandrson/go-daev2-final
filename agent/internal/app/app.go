@@ -11,13 +11,7 @@ type App struct {
 	GRPCClient *grpcc.GRPCCApp
 }
 
-func New(
-	log *slog.Logger,
-	addr string,
-	retriesCount int,
-	countCalcs int,
-	durations map[string]time.Duration,
-) *App {
+func New(log *slog.Logger, addr string, retriesCount int, countCalcs int, durations map[string]time.Duration) *App {
 	grpccApp := grpcc.New(log, addr, retriesCount, countCalcs, durations)
 
 	return &App{
