@@ -19,32 +19,12 @@ type HttpService struct {
 }
 
 type ExpressionStorage interface {
-	RegisterApp(
-		ctx context.Context,
-		name string,
-		secret string,
-	) (int64, error)
-	GetAllAgent(
-		ctx context.Context,
-	) ([]models.Agent, error)
-	GetExpressionsForUser(
-		ctx context.Context,
-		uid int,
-	) ([]models.Expression, error)
-	GetExpressionById(
-		ctx context.Context,
-		id string,
-		uid int,
-	) (*models.Expression, error)
-	SaveExpression(
-		ctx context.Context,
-		expression *models.Expression,
-		uid int,
-	) (string, error)
-	GetResultOfExpression(
-		ctx context.Context,
-		id string,
-	) (float32, error)
+	RegisterApp(ctx context.Context, name string, secret string) (int64, error)
+	GetAllAgent(ctx context.Context) ([]models.Agent, error)
+	GetExpressionsForUser(ctx context.Context, uid int) ([]models.Expression, error)
+	GetExpressionById(ctx context.Context, id string, uid int) (*models.Expression, error)
+	SaveExpression(ctx context.Context, expression *models.Expression, uid int) (string, error)
+	GetResultOfExpression(ctx context.Context, id string) (float32, error)
 }
 
 func New(
