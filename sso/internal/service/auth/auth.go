@@ -22,20 +22,12 @@ type Auth struct {
 }
 
 type UserStorage interface {
-	SaveUser(
-		ctx context.Context,
-		login string,
-		passHash []byte,
-	) (uid int64, err error)
+	SaveUser(ctx context.Context, login string, passHash []byte) (uid int64, err error)
 	User(ctx context.Context, login string) (*models.User, error)
 	App(ctx context.Context, appId int) (*models.App, error)
 }
 
-func New(
-	log *slog.Logger,
-	storage UserStorage,
-	tokenTTL time.Duration,
-) *Auth {
+func New(log *slog.Logger, storage UserStorage, tokenTTL time.Duration) *Auth {
 	return &Auth{
 		log:      log,
 		storage:  storage,
@@ -47,12 +39,7 @@ func New(
 //
 // If user exists but password nor login doesnt exist, returns error
 // If user doesnt exists, return error
-func (a *Auth) Login(
-	ctx context.Context,
-	login string,
-	password string,
-	appID int,
-) (string, error) {
+func (a *Auth) Login(ctx context.Context, login string, password string, appID int) (string, error) {
 	const op = "Auth.Login"
 
 	log := a.log.With(
