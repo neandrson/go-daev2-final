@@ -19,8 +19,8 @@ func TestParse(t *testing.T) {
 		},
 		{
 			name:       "correct expression",
-			expression: "1+2*(2-3)^3",
-			want:       []*RPNToken{NewRPNOperandToken(1), NewRPNOperandToken(2), NewRPNOperandToken(2), NewRPNOperandToken(3), NewRPNOperatorToken("-"), NewRPNOperandToken(3), NewRPNOperatorToken("^"), NewRPNOperatorToken("*"), NewRPNOperatorToken("+")},
+			expression: "1+2*(2-3)+3",
+			want:       []*RPNToken{NewRPNOperandToken(1), NewRPNOperandToken(2), NewRPNOperandToken(2), NewRPNOperandToken(3), NewRPNOperatorToken("-"), NewRPNOperandToken(3), NewRPNOperatorToken("*"), NewRPNOperatorToken("+"), NewRPNOperatorToken("+")},
 			wantErr:    false,
 		},
 		{
