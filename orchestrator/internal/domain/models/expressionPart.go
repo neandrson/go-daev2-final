@@ -13,11 +13,11 @@ type ExpressionPart struct {
 
 func NewExpressionPart(firstOperand, secondOperand, operation *shuntingYard.RPNToken, id string, duration int) *ExpressionPart {
 	return &ExpressionPart{
-		FirstOperand:  firstOperand,
-		SecondOperand: secondOperand,
-		Operation:     operation,
-		Duration:      duration,
-		IdExpression:  id,
-		Result:        make(chan *shuntingYard.RPNToken),
+		//FirstOperand:  firstOperand,
+		//SecondOperand: secondOperand,
+		Operation: operation,
+		//Duration:     duration,
+		IdExpression: id,
+		Result:       make(chan *shuntingYard.RPNToken),
 	}
 }
