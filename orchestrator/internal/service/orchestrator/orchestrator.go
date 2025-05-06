@@ -15,44 +15,21 @@ type Orchestrator struct {
 }
 
 type ExpressionStorage interface {
-	Heartbeat(
-		ctx context.Context,
-		id_agent int,
-	) error
-	RemoveAgent(
-		ctx context.Context,
-		id_agent int,
-	) error
-	GetExpressionToEvaluate(
-		ctx context.Context,
-		id_agent int,
-	) (*models.Expression, error)
-	SaveResult(
-		ctx context.Context,
-		id_expression string,
-		result float32,
-		idAgent int,
-	) error
-	RegisterNewAgent(
-		ctx context.Context,
-	) (int, error)
+	Heartbeat(ctx context.Context, id_agent int) error
+	RemoveAgent(ctx context.Context, id_agent int) error
+	GetExpressionToEvaluate(ctx context.Context, id_agent int) (*models.Expression, error)
+	SaveResult(ctx context.Context, id_expression string, result float32, idAgent int) error
+	RegisterNewAgent(ctx context.Context) (int, error)
 }
 
-func New(
-	log *slog.Logger,
-	storage ExpressionStorage,
-) *Orchestrator {
+func New(log *slog.Logger, storage ExpressionStorage) *Orchestrator {
 	return &Orchestrator{
 		log:     log,
 		storage: storage,
 	}
 }
 
-func (o *Orchestrator) Heartbeat(
-	ctx context.Context,
-	is_alive bool,
-	id_agent int,
-) error {
+func (o *Orchestrator) Heartbeat(ctx context.Context, is_alive bool, id_agent int) error {
 	const op = "Orch.Heartbeat"
 
 	if is_alive {
@@ -70,10 +47,7 @@ func (o *Orchestrator) Heartbeat(
 	return nil
 }
 
-func (o *Orchestrator) GetExpressionToEvaluate(
-	ctx context.Context,
-	id_agent int,
-) (string, []*shuntingYard.RPNToken, error) {
+func (o *Orchestrator) GetExpressionToEvaluate(ctx context.Context, id_agent int) (string, []*shuntingYard.RPNToken, error) {
 	const op = "Orch.GetExpressionToEvaluate"
 
 	expression, err := o.storage.GetExpressionToEvaluate(ctx, id_agent)
@@ -85,12 +59,7 @@ func (o *Orchestrator) GetExpressionToEvaluate(
 	return expression.IdExpression, expression.PostfixExpression, nil
 }
 
-func (o *Orchestrator) SaveResultOfExpression(
-	ctx context.Context,
-	id_expression string,
-	result float32,
-	idAgent int,
-) error {
+func (o *Orchestrator) SaveResultOfExpression(ctx context.Context, id_expression string, result float32, idAgent int) error {
 	const op = "Orch.SaveResult"
 
 	if err := o.storage.SaveResult(ctx, id_expression, result, idAgent); err != nil {
