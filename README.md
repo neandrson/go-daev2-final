@@ -169,6 +169,15 @@ curl --location 'http://localhost:8080/api/v1/login' \
 Your authorization token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo
 ```
 - Пример запроса на решение примера:
+- Шаблон запроса:
+```go
+curl --location 'http://localhost:8080/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer сгенерированный_токен_после_входа' \
+--data '{
+    "expression": "выражение"
+}'
+```
 ```go
 curl --location 'http://localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
@@ -205,11 +214,20 @@ created_at: 2025-05-05 17:43:05.256561 +0000 UTC
 solved_at: 2025-05-05 17:43:08.556705 +0000 UTC
 id: 2_p_2
 ```
-- [/docs/examples/getExpressionById.http](./docs/examples/getExpressionById.http) -> Пример запроса на получение выражения по его id:
+- Пример запроса на получение выражения по его id:
 ```go
-
+curl --location 'http://localhost:8080/api/v1/expression?id=2_p_2' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjY0NTE0NSwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.M8RXSVf22KuHnkPdeveQt1-NVvtDu0Q9tPc1Ksc8v4M'
 ```
-- [/docs/examples/getImpodenceKey.http](./docs/examples/getImpodenceKey.http) -> Пример запроса на получение ключа имподентности (id выражения):
+Ответ:  Status: 200
+```go
+expression: 2+2
+status: solved
+result: 4.000000
+created_at: 2025-05-06 19: 12: 49.683236 +0000 UTC
+solved_at: 2025-05-06 19: 12: 51.383644 +0000 UTC
+```
+- Пример запроса на получение ключа имподентности (id выражения):
 ```go
 curl --location 'http://localhost:8080/internal/task' \
 --header 'Content-Type: application/json' \
