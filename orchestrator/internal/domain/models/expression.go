@@ -1,7 +1,7 @@
 package models
 
 import (
-	"time"
+	//"time"
 
 	shuntingYard "github.com/neandrson/go-daev2-final/shunting-yard"
 )
@@ -11,10 +11,10 @@ type Expression struct {
 	PostfixExpression []*shuntingYard.RPNToken `json:"postfix" db:"-"`
 	Result            float64                  `json:"result" db:"result"`
 	UserId            int                      `json:"uid" db:"uid"`
-	CreatedAt         time.Time                `json:"createdAt" db:"created"`
-	SolvedAt          time.Time                `json:"solvedAt" db:"solved_at"`
-	Status            Status                   `json:"status" db:"status"`
-	IdExpression      string                   `json:"id" db:"id"`
+	//CreatedAt         time.Time                `json:"createdAt" db:"created"`
+	//SolvedAt          time.Time                `json:"solvedAt" db:"solved_at"`
+	Status       Status `json:"status" db:"status"`
+	IdExpression string `json:"id" db:"id"`
 }
 
 func Create(infinixExpression string, parsedExpression []*shuntingYard.RPNToken, id string) Expression {
