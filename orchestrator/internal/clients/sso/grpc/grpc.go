@@ -79,11 +79,7 @@ func InterceptorLogger(l *slog.Logger) grpclog.Logger {
 	})
 }
 
-func (c *Client) Register(
-	ctx context.Context,
-	login string,
-	password string,
-) (int, error) {
+func (c *Client) Register(ctx context.Context, login string, password string) (int, error) {
 	const op = "grpc.Register"
 
 	log := c.log.With(
