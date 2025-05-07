@@ -30,7 +30,7 @@ func main() {
 
 	application := app.New(log, cfg.GRPC.Port, storage, cfg.TokenTTL, cfg.HTTP.Port, cfg.GRPCClient.Addr, cfg.GRPCClient.RetriesCount, cfg.Secret)
 	if application.HTTPServer == nil {
-		panic("httpserver is nil!!1!")
+		panic("httpserver is nil!!!!")
 	}
 	go func() {
 		application.HTTPServer.MustRun()
