@@ -40,7 +40,7 @@ func (s *Server) GetExpressionById(w http.ResponseWriter, r *http.Request) {
 		), //, expression.CreatedAt, expression.SolvedAt
 	)
 
-	fmt.Fprintln(w, "Expression doesn't exist")
+	//fmt.Fprintln(w, "Expression doesn't exist")
 }
 
 func (s *Server) EvaluateExpression(w http.ResponseWriter, r *http.Request) {
@@ -136,8 +136,8 @@ func (s *Server) GetExpressionsForUser(w http.ResponseWriter, r *http.Request) {
 	for _, e := range expressions {
 		w.Write(
 			[]byte(
-				fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\ncreated_at: %v\nsolved_at: %v\nid: %s\n\n", e.InfinixExpression, e.Status, e.Result, e.CreatedAt, e.SolvedAt, e.IdExpression),
-			),
+				fmt.Sprintf("status: %s\nresult: %f\nid: %s\n\n", e.IdExpression, e.Status, e.Result), //expression: %s\ncreated_at: %v\nsolved_at: %v\n
+			), //, e.InfinixExpression, e.CreatedAt, e.SolvedAt
 		)
 	}
 }
