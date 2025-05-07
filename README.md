@@ -142,6 +142,20 @@ docker compose down
 Все примеры рассчитаны на то, что приложение собиралось через docker compose.
 В ином случае указываете порт, который прослушивает сервер - 8080.
 
+- При некоторых запросах требуется указывать дополнительные параметры. Шаблон запроса:
+```go
+curl --location 'http://localhost:8080/api/v1/calculate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer сгенерированный_токен_после_входа' \
+--data '{
+    "expression": "выражение"
+}'
+```
+Статусы решений:
+- "" - завершено
+- "solved" - вычисляется
+- 
+
 - Пример запроса для регистрации пользователя:
 ```go
 curl --location 'http://localhost:8080/api/v1/register' \
@@ -169,15 +183,6 @@ curl --location 'http://localhost:8080/api/v1/login' \
 Your authorization token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfaWQiOjEsImV4cCI6MTc0NjU1Mjk3NiwibG9naW4iOiJndWVzdCIsInVpZCI6MX0.F7suytfNh5pcu62VRdO0BoZWXIW2J2z1P4xEDZRoqKo
 ```
 - Пример запроса на решение примера:
-- Шаблон запроса:
-```go
-curl --location 'http://localhost:8080/api/v1/calculate' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer сгенерированный_токен_после_входа' \
---data '{
-    "expression": "выражение"
-}'
-```
 ```go
 curl --location 'http://localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
