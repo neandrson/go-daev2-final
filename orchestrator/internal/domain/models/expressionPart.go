@@ -16,8 +16,8 @@ func NewExpressionPart(firstOperand, secondOperand, operation *shuntingYard.RPNT
 		FirstOperand:  firstOperand,
 		SecondOperand: secondOperand,
 		Operation:     operation,
-		//Duration:      duration,
-		IdExpression: id,
-		Result:       make(chan *shuntingYard.RPNToken),
+		Duration:      duration,
+		IdExpression:  id,
+		Result:        make(chan *shuntingYard.RPNToken),
 	}
 }
