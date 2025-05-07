@@ -136,7 +136,7 @@ func (s *Server) GetExpressionsForUser(w http.ResponseWriter, r *http.Request) {
 	for _, e := range expressions {
 		w.Write(
 			[]byte(
-				fmt.Sprintf("status: %s\nresult: %f\nid: %s\n\n", e.IdExpression, e.Status, e.Result), //expression: %s\ncreated_at: %v\nsolved_at: %v\n
+				fmt.Sprintf("id: %s\nstatus: %s\nresult: %f\n\n", e.IdExpression, e.Status, e.Result), //expression: %s\ncreated_at: %v\nsolved_at: %v\n
 			), //, e.InfinixExpression, e.CreatedAt, e.SolvedAt
 		)
 	}
