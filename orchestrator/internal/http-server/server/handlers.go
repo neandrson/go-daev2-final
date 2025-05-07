@@ -36,8 +36,8 @@ func (s *Server) GetExpressionById(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(
 		[]byte(
-			fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\ncreated_at: %v\nsolved_at: %v\n\n", expression.InfinixExpression, expression.Status, expression.Result, expression.CreatedAt, expression.SolvedAt),
-		),
+			fmt.Sprintf("expression: %s\nstatus: %s\nresult: %f\n\n", expression.InfinixExpression, expression.Status, expression.Result), //created_at: %v\nsolved_at: %v\n
+		), //, expression.CreatedAt, expression.SolvedAt
 	)
 
 	fmt.Fprintln(w, "Expression doesn't exist")
