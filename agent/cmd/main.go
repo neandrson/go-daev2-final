@@ -28,7 +28,7 @@ func main() {
 		"-": cfg.Durations.Minus,
 		"*": cfg.Durations.Mult,
 		"/": cfg.Durations.Del,
-		"^": cfg.Durations.Pow,
+		//"^": cfg.Durations.Pow,
 	})
 
 	application.GRPCClient.MustRun()
@@ -50,13 +50,9 @@ func setupLogger(env string) *slog.Logger {
 	case envLocal:
 		log = setupPrettyLogger()
 	case envDev:
-		log = slog.New(
-			slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug}),
-		)
+		log = slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelDebug}))
 	case envProd:
-		log = slog.New(
-			slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}),
-		)
+		log = slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
 	}
 
 	return log
