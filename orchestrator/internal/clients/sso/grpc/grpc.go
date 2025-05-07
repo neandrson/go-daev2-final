@@ -105,11 +105,7 @@ func (c *Client) Register(
 	return int(resp.UserId), nil
 }
 
-func (c *Client) Login(
-	ctx context.Context,
-	login string,
-	password string,
-) (string, error) {
+func (c *Client) Login(ctx context.Context, login string, password string) (string, error) {
 	const op = "grpc.Login"
 
 	resp, err := c.api.Login(ctx, &sso.LoginRequest{
