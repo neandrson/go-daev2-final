@@ -68,7 +68,6 @@ func (a *Agent) SolveExpression(exp *models.Expression) {
 	// fmt.Println(exp.PostfixExpression)
 
 	for _, token := range exp.PostfixExpression {
-		// fmt.Println(stack)
 		if token.Type == models.Operand {
 			stack = append(stack, token)
 			continue
