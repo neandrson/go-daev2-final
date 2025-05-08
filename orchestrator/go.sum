@@ -35,8 +35,8 @@ github.com/mattn/go-colorable v0.1.13/go.mod h1:7S9/ev0klgBDR4GtXTXX8a3vIGJpMovk
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
 github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
-github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250505164725-7209d4dafd4a h1:VS3auyqwxKRdiSi1Pq/QPbCcmM3CVF5JKUm8kry9KMg=
-github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250505164725-7209d4dafd4a/go.mod h1:osnkzodojChsjaxv0tFaOnVGZqvi0jLe3tgIj3iyRPo=
+github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250508102915-132fd6610a7d h1:ccPqfNxeDa0Oqb0SJUgnCliPImq0IE5bAIJQVBl2Tis=
+github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250508102915-132fd6610a7d/go.mod h1:osnkzodojChsjaxv0tFaOnVGZqvi0jLe3tgIj3iyRPo=
 github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888 h1:1GGvGJ5nmhZhI0gbiCDJ4aGT/Bsh73OZgnZvJmbowDM=
 github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888/go.mod h1:UbrqWpUCnmyedp0LGMU2Wevz/uCOi5J/rC7dYZcPb1Q=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
