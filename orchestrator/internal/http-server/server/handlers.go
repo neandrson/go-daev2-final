@@ -58,7 +58,7 @@ func (s *Server) EvaluateExpression(w http.ResponseWriter, r *http.Request) {
 	// }
 	// // записываем в бд
 
-	result, err := s.httpService.EvaluateExpression(context.Background(), &expression, r.Context().Value("uid").(int))
+	result, err := s.httpService.EvaluateExpression(context.Background(), &expression, r.Context().Value("id").(int))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
