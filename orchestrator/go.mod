@@ -13,10 +13,9 @@ require (
 
 require (
 	github.com/golang-jwt/jwt/v5 v5.2.1
+	github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250508102915-132fd6610a7d
 	github.com/neandrson/protos v0.0.0-20250502105814-f8a135693888
 )
-
-require github.com/neandrson/go-daev2-final/shunting-yard v0.0.0-20250505164725-7209d4dafd4a // indirect
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
