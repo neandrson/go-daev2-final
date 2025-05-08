@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"log/slog"
-	"time"
 
 	"github.com/jackc/pgx/v5"
 	"github.com/neandrson/go-daev2-final/orchestrator/internal/clients/sso/grpc"
@@ -60,7 +59,7 @@ func (s *HttpService) GetExpressionById(ctx context.Context, id string, uid int)
 	return expression, err
 }
 
-func (s *HttpService) EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (float32, error) {
+func (s *HttpService) EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (string, error) { //float32, error
 	const op = "httpservice.EvaluateExpression"
 
 	log := s.log.With(
@@ -73,19 +72,19 @@ func (s *HttpService) EvaluateExpression(ctx context.Context, expression *models
 	id, err := s.storage.SaveExpression(ctx, expression, uid)
 	if err != nil {
 		log.Error(err.Error())
-		return 0, err
+		return "", err //0, err
 	}
-	var result float32
-	for {
-		result, err = s.storage.GetResultOfExpression(ctx, id)
+	//var result float32
+	/*for {
+		_, err = s.storage.GetResultOfExpression(ctx, id)
 		if err == nil {
 			break
 		}
 
 		time.Sleep(10 * time.Second)
-	}
+	}*/
 	log.Info("expression evaluated!")
-	return result, nil
+	return id, nil //result, nil
 }
 
 func (s *HttpService) Login(ctx context.Context, login string, password string) (string, error) {
