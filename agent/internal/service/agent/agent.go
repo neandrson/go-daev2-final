@@ -89,7 +89,7 @@ func (a *Agent) SolveExpression(exp *models.Expression) {
 		stack = append(stack, <-exprPart.Result)
 		close(exprPart.Result)
 	}
-	// fmt.Print("123")
+
 	// result, _ := shuntingYard.Evaluate(exp.PostfixExpression)
 
 	setResultsToExpression(exp, stack[0].Value.(float64))
