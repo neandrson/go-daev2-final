@@ -58,13 +58,13 @@ func (s *Server) EvaluateExpression(w http.ResponseWriter, r *http.Request) {
 	// }
 	// // записываем в бд
 
-	result, err := s.httpService.EvaluateExpression(context.Background(), &expression, r.Context().Value("uid").(int))
+	id, err := s.httpService.EvaluateExpression(context.Background(), &expression, r.Context().Value("uid").(int)) //result, err
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	w.Write([]byte(fmt.Sprintf("Result is: %v", result)))
+	w.Write([]byte(fmt.Sprintf("Result is: %v", id))) //result
 }
 
 func (s *Server) Login(w http.ResponseWriter, r *http.Request) {
