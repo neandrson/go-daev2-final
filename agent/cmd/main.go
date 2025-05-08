@@ -28,7 +28,7 @@ func main() {
 		"-": cfg.Durations.Minus,
 		"*": cfg.Durations.Mult,
 		"/": cfg.Durations.Del,
-		//"^": cfg.Durations.Pow,
+		"^": cfg.Durations.Pow,
 	})
 
 	application.GRPCClient.MustRun()
