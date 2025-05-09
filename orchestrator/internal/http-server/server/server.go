@@ -24,7 +24,7 @@ type Server struct {
 
 type HttpService interface {
 	GetExpressionById(ctx context.Context, id string, uid int) (*models.Expression, error)
-	EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (float32, error)
+	EvaluateExpression(ctx context.Context, expression *models.Expression, uid int) (string, error) //float32, error
 	GetAgentStates(ctx context.Context) ([]models.Agent, error)
 	GetExpressionsForUser(ctx context.Context, uid int) ([]models.Expression, error)
 	Login(ctx context.Context, login string, password string) (string, error)
