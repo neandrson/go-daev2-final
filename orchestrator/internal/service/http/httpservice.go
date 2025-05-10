@@ -76,7 +76,7 @@ func (s *HttpService) EvaluateExpression(ctx context.Context, expression *models
 	}
 	//var result float32
 	/*for {
-		_, err = s.storage.GetResultOfExpression(ctx, id)
+		result, err = s.storage.GetResultOfExpression(ctx, id)
 		if err == nil {
 			break
 		}
