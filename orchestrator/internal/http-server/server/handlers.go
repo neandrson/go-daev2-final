@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/jackc/pgx/v5"
 	model "github.com/neandrson/go-daev2-final/orchestrator/internal/domain/models"
@@ -57,6 +58,8 @@ func (s *Server) EvaluateExpression(w http.ResponseWriter, r *http.Request) {
 	// 	log.Println(err.Error())
 	// }
 	// // записываем в бд
+
+	expression.IdExpression = fmt.Sprintf("%d", time.Now().UnixNano())
 
 	id, err := s.httpService.EvaluateExpression(context.Background(), &expression, r.Context().Value("uid").(int)) //result, err
 	if err != nil {
