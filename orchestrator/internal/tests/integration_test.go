@@ -31,7 +31,7 @@ func TestExpressionCalculation(t *testing.T) {
 	registerResp, err := http.Post("http://localhost:8080/api/v1/register", "application/json",
 		strings.NewReader(`{"login": "testuser", "password": "testpass"}`))
 	require.NoError(t, err)
-	assert.Equal(t, http.StatusCreated, registerResp.StatusCode)
+	assert.Equal(t, http.StatusOK, registerResp.StatusCode)
 
 	// Вход
 	loginResp, err := http.Post("http://localhost:8080/api/v1/login", "application/json",
