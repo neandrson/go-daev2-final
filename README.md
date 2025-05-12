@@ -237,7 +237,7 @@ curl --location "http://localhost:8080/api/v1/expressions" \
 - Запрос на получение выражения по его id:
 Отправьте GET-запрос на `/api/v1/expressions/{id}`, где `{id}` - это ID выражения. Не забудьте передать JWT токен.
 ```go
-curl --location "http://localhost:8080/api/v1/expression/1" \
+curl --location "http://localhost:8080/api/v1/expressions/1" \
 --header "Authorization: Bearer сгенерированный_токен_после_входа"
 ```
 Ответ:  Пока выражение вычисляется, статус будет `in progress`. После успешного вычисления:
